@@ -1,5 +1,7 @@
+#ifndef ASPELL_HPP
+#define ASPELL_HPP
 #include <iostream>
-
+#include "ATarget.hpp"
 class ASpell{
     private:
         std::string name;
@@ -8,6 +10,7 @@ class ASpell{
         ASpell(const std::string &Name, const std::string &Effects);
         const std::string  &getName() const;
         const std::string  &getEffects() const;
-        virtual void doSomething() const = 0;
-        
-}
+        virtual ASpell *clone() const = 0;
+};
+
+#endif
